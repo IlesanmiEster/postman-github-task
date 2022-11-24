@@ -18,10 +18,15 @@
 								"exec": [
 									"pm.test(\"Status code should be 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});\r",
+									"})\r",
 									"pm.test(\"Status code name should have an Ok string\", function () {\r",
 									"    pm.response.to.have.status(\"Ok\");\r",
-									"});"
+									"});\r",
+									"var jsonData = pm.response.json();\r",
+									"console.log(jsonData.entry[1].title);\r",
+									"\r",
+									"pm.environment.set(\"apiVersion\", jsonData.entry[1].title);\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -54,10 +59,33 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"console.log(jsonData.entry[1].title);\r",
+									"const Categories = pm.response.json();\r",
 									"\r",
-									"pm.environment.set(\"entityId\", jsonData.entry[1].title);\r",
+									"console.log(Categories.categories);\r",
+									"\r",
+									"pm.environment.set(\"Categories\", Categories.categories);\r",
+									"\r",
+									"\r",
+									"const Title = pm.response.json();\r",
+									"\r",
+									"console.log(Title.title);\r",
+									"\r",
+									"pm.environment.set(\"title\", Title.title);\r",
+									"\r",
+									"\r",
+									"const PaymentCurrency = pm.response.json();\r",
+									"\r",
+									"console.log(PaymentCurrency.paymentCurrency);\r",
+									"\r",
+									"pm.environment.set(\"paymentCurrency\", PaymentCurrency.paymentCurrency);\r",
+									"\r",
+									"\r",
+									"\r",
+									"const ApiVersion = pm.response.json();\r",
+									"\r",
+									"console.log(ApiVersion.apiVersion);\r",
+									"\r",
+									"pm.environment.set(\"apiVersion\", ApiVersion.apiVersion);\r",
 									"\r",
 									"\r",
 									"\r",
@@ -209,9 +237,9 @@
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"    const response = pm.response.json();\r",
-									"\r",
-									"\r",
+									"   \r",
+									"   \r",
+									"   const response = pm.response.json();\r",
 									"console.log(response[2].id);\r",
 									"pm.environment.set(\"JustMeID\", response[2].id);\r",
 									"\r",
@@ -220,7 +248,7 @@
 									"\r",
 									"\r",
 									"\r",
-									"/*\r",
+									"\r",
 									"\r",
 									"\r",
 									"\r",
@@ -272,14 +300,14 @@
 									"pm.test(\"Body matches fiction string\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"fiction\");\r",
 									"});\r",
-									"const response = pm.response.json();\r",
+									"/*const response = pm.response.json();\r",
 									"// print any kind of variables/message on the screen\r",
 									"console.log(response[2].name);\r",
 									"pm.test(\"Search for a book name called Viscount Who Loved Me\", function (){\r",
 									"    pm.expect(response[3].name).to.eql(\"Viscount Who Loved Me\")\r",
 									"});\r",
 									"\r",
-									"/*const Fiction = response.filter((book) => book.type === \"fiction\");\r",
+									"const Fiction = response.filter((book) => book.type === \"fiction\");\r",
 									"console.log(Fiction)\r",
 									"//Print out the id of a fiction book that is available called \"The Midnight Library\"*/\r",
 									"\r",
@@ -336,25 +364,12 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"\r",
 									"const OrderID = pm.response.json();\r",
 									"\r",
 									"console.log(OrderID.orderId);\r",
 									"\r",
 									"pm.environment.set(\"orderId\", OrderID.orderId);\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"/*\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
 									"\r",
 									"\r",
 									"\r",
@@ -384,7 +399,7 @@
 									"\r",
 									"    pm.test(\"Body matches created string\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"created\")\r",
-									"}); */\r",
+									"});\r",
 									"\r",
 									"\r",
 									"pm.test(\"Status code should be 201\", function () {\r",
@@ -405,7 +420,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "5617c4b863f89aa4221c841b53bdea5e75e2b0a1b54a400b617b33cff5ea0bd5",
+									"value": "6cd9b36426ebc8798b0ea0cea12bb3684f263b8b920bbd5bb9b3dd94d1c97d2e",
 									"type": "string"
 								}
 							]
@@ -414,7 +429,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"bookId\": {{JustMeID}},\n  \"customerName\": \"Eriife\"\n}",
+							"raw": "{\n  \"bookId\": {{JustMeID}},\n  \"customerName\": \"Peace\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -592,6 +607,9 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"\r",
+									"\r",
+									"\r",
 									"pm.test(\"Status code should be 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
@@ -639,7 +657,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "5617c4b863f89aa4221c841b53bdea5e75e2b0a1b54a400b617b33cff5ea0bd5",
+									"value": "6cd9b36426ebc8798b0ea0cea12bb3684f263b8b920bbd5bb9b3dd94d1c97d2e",
 									"type": "string"
 								}
 							]
@@ -692,16 +710,16 @@
 									"console.log(jsonData.id)\r",
 									"console.log(jsonData.bookId)\r",
 									"console.log(jsonData.customerName)\r",
-									"    pm.expect(jsonData.id).to.eql(\"cKftpFbWBvmKdoKbGzUBm\");\r",
+									"    pm.expect(jsonData.id).to.eql(\"H5MXluvz9D7SpDEl6XWPe\");\r",
 									"});\r",
 									"\r",
 									"pm.test(\"jsonData\", function () {\r",
 									"   \r",
-									"    pm.expect(jsonData.bookId).to.eql(1);\r",
+									"    pm.expect(jsonData.bookId).to.eql(4);\r",
 									"});\r",
 									"pm.test(\"jsonData.customerName\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.customerName).to.eql(\"John\");\r",
+									"    pm.expect(jsonData.customerName).to.eql(\"Peace\");\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Body matches bookId string\", function () {\r",
@@ -729,7 +747,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "5617c4b863f89aa4221c841b53bdea5e75e2b0a1b54a400b617b33cff5ea0bd5",
+									"value": "6cd9b36426ebc8798b0ea0cea12bb3684f263b8b920bbd5bb9b3dd94d1c97d2e",
 									"type": "string"
 								}
 							]
@@ -784,16 +802,16 @@
 									"console.log(jsonData.id)\r",
 									"console.log(jsonData.bookId)\r",
 									"console.log(jsonData.customerName)\r",
-									"    pm.expect(jsonData.id).to.eql(\"cKftpFbWBvmKdoKbGzUBm\");\r",
+									"    pm.expect(jsonData.id).to.eql(\"H5MXluvz9D7SpDEl6XWPe\");\r",
 									"});\r",
 									"\r",
 									"pm.test(\"jsonData\", function () {\r",
 									"   \r",
-									"    pm.expect(jsonData.bookId).to.eql(1);\r",
+									"    pm.expect(jsonData.bookId).to.eql(4);\r",
 									"});\r",
 									"pm.test(\"jsonData.customerName\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.customerName).to.eql(\"John\");\r",
+									"    pm.expect(jsonData.customerName).to.eql(\"Peace\");\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Body matches bookId string\", function () {\r",
@@ -821,7 +839,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "5617c4b863f89aa4221c841b53bdea5e75e2b0a1b54a400b617b33cff5ea0bd5",
+									"value": "6cd9b36426ebc8798b0ea0cea12bb3684f263b8b920bbd5bb9b3dd94d1c97d2e",
 									"type": "string"
 								}
 							]
