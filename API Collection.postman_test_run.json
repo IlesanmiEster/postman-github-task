@@ -1,0 +1,408 @@
+{
+	"id": "0ae7afde-297f-478b-ac7d-64607a35b4ea",
+	"name": "API Collection",
+	"timestamp": "2022-11-24T16:08:48.286Z",
+	"collection_id": "24217984-34858d8f-69d2-4bcb-8e4c-8b5d286da024",
+	"folder_id": 0,
+	"environment_id": "24217984-ae12b1d4-9a0e-4915-99ed-efbb6b666a9c",
+	"totalPass": 45,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "cf77ad4c-fca0-450c-a151-61b3ecca7459",
+			"name": "Get All Entries",
+			"url": "https://demo.fusio-project.org/index.php",
+			"time": 732,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code should be 200": true,
+				"Status code name should have an OK string": true,
+				"apiVersion should be 6.3.8.0": true,
+				"title should be Fusio": true,
+				"paymentCurrency should be EUR": true,
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name should have an OK string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"apiVersion should be 6.3.8.0": {
+					"pass": 1,
+					"fail": 0
+				},
+				"title should be Fusio": {
+					"pass": 1,
+					"fail": 0
+				},
+				"paymentCurrency should be EUR": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				732
+			],
+			"allTests": [
+				{
+					"Status code should be 200": true,
+					"Status code name should have an OK string": true,
+					"apiVersion should be 6.3.8.0": true,
+					"title should be Fusio": true,
+					"paymentCurrency should be EUR": true,
+					"Body matches string": true
+				}
+			]
+		},
+		{
+			"id": "07d20646-d62c-48c1-8601-2120fe35b83b",
+			"name": "Get Books",
+			"url": "https://simple-books-api.glitch.me/books?type=fiction",
+			"time": 1444,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name have an OK string": true,
+				"Status code should be 200": true,
+				"jsonData": true,
+				"Body matches The Russia string ": true,
+				"Body matches true string": true,
+				"Body matches id string": true,
+				"Body 1 string": true,
+				"Body matches name string": true,
+				"Body matches fiction string": true,
+				"The id number of a fiction book that available with the name The Midnight Library is ": true
+			},
+			"testPassFailCounts": {
+				"Status code name have an OK string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"jsonData": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches The Russia string ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches true string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches id string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body 1 string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches name string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches fiction string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The id number of a fiction book that available with the name The Midnight Library is ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1444
+			],
+			"allTests": [
+				{
+					"Status code name have an OK string": true,
+					"Status code should be 200": true,
+					"jsonData": true,
+					"Body matches The Russia string ": true,
+					"Body matches true string": true,
+					"Body matches id string": true,
+					"Body 1 string": true,
+					"Body matches name string": true,
+					"Body matches fiction string": true,
+					"The id number of a fiction book that available with the name The Midnight Library is ": true
+				}
+			]
+		},
+		{
+			"id": "9b14a6ca-58bc-4574-9274-71996f17dc6a",
+			"name": "Place a book order using valid ID",
+			"url": "https://simple-books-api.glitch.me/orders",
+			"time": 435,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"created should be true": true,
+				"Body matches orderId string": true,
+				"Body matches created string": true,
+				"Body matches true string": true,
+				"Status code name should have an OK string": true,
+				"Status code should be 201": true
+			},
+			"testPassFailCounts": {
+				"created should be true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches orderId string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches created string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches true string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name should have an OK string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code should be 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				435
+			],
+			"allTests": [
+				{
+					"created should be true": true,
+					"Body matches orderId string": true,
+					"Body matches created string": true,
+					"Body matches true string": true,
+					"Status code name should have an OK string": true,
+					"Status code should be 201": true
+				}
+			]
+		},
+		{
+			"id": "ebff7909-125e-4b89-842d-6aabb996528c",
+			"name": "Get all orders",
+			"url": "https://simple-books-api.glitch.me/orders",
+			"time": 541,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code should be 200": true,
+				"Status code name should have an OK string": true,
+				"jsonData": true,
+				"Body matches bookId string": true,
+				"Body matches customerName string": true,
+				"Body matches createdBy string": true,
+				"Body matches timestamp string": true,
+				"Body matches quantity string": true
+			},
+			"testPassFailCounts": {
+				"Status code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name should have an OK string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"jsonData": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches bookId string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches customerName string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches createdBy string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches timestamp string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches quantity string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				541
+			],
+			"allTests": [
+				{
+					"Status code should be 200": true,
+					"Status code name should have an OK string": true,
+					"jsonData": true,
+					"Body matches bookId string": true,
+					"Body matches customerName string": true,
+					"Body matches createdBy string": true,
+					"Body matches timestamp string": true,
+					"Body matches quantity string": true
+				}
+			]
+		},
+		{
+			"id": "abb8ff3f-134b-4b2b-b80e-5b779d1dfe30",
+			"name": "Get an order",
+			"url": "https://simple-books-api.glitch.me/orders/8ZIH2qNvxlaHo2fyTOTSx",
+			"time": 879,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code should be 200": true,
+				"Status code name should have an OK string": true,
+				"Your test name": true,
+				"jsonData": true,
+				"jsonData.customerName": true,
+				"Body matches bookId string": true,
+				"Body matches id string": true,
+				"Body matches customerName string": true
+			},
+			"testPassFailCounts": {
+				"Status code should be 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name should have an OK string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"jsonData": {
+					"pass": 1,
+					"fail": 0
+				},
+				"jsonData.customerName": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches bookId string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches id string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches customerName string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				879
+			],
+			"allTests": [
+				{
+					"Status code should be 200": true,
+					"Status code name should have an OK string": true,
+					"Your test name": true,
+					"jsonData": true,
+					"jsonData.customerName": true,
+					"Body matches bookId string": true,
+					"Body matches id string": true,
+					"Body matches customerName string": true
+				}
+			]
+		},
+		{
+			"id": "dc79682b-44ef-4e8a-83e2-9dc264e487c4",
+			"name": "Delete an order",
+			"url": "https://simple-books-api.glitch.me/orders/qKmqNSudoEuINAkahBTVX",
+			"time": 883,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code should be 204": true,
+				"Status code name should have an OK string": true
+			},
+			"testPassFailCounts": {
+				"Status code should be 204": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code name should have an OK string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				883
+			],
+			"allTests": [
+				{
+					"Status code should be 204": true,
+					"Status code name should have an OK string": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4914,
+	"collection": {
+		"requests": [
+			{
+				"id": "cf77ad4c-fca0-450c-a151-61b3ecca7459",
+				"method": "GET"
+			},
+			{
+				"id": "07d20646-d62c-48c1-8601-2120fe35b83b",
+				"method": "GET"
+			},
+			{
+				"id": "9b14a6ca-58bc-4574-9274-71996f17dc6a",
+				"method": "POST"
+			},
+			{
+				"id": "ebff7909-125e-4b89-842d-6aabb996528c",
+				"method": "GET"
+			},
+			{
+				"id": "abb8ff3f-134b-4b2b-b80e-5b779d1dfe30",
+				"method": "GET"
+			},
+			{
+				"id": "dc79682b-44ef-4e8a-83e2-9dc264e487c4",
+				"method": "DELETE"
+			}
+		]
+	}
+}
